@@ -6,11 +6,11 @@ CPPFILES=*.cpp #./utils/*.cpp
 LIBS=/usr/lib #libs
  
 
-main: parser.cpp 
-	$(GPP) -I$(INCLUDES) $(CPPFILES)  -I. -g -o parser -L$(LIBS) -lgumbo -lchilkat-9.5.0 -lpthread 
+main: queryfinder.cpp 
+	$(GPP) -I$(INCLUDES) $(CPPFILES)  -I. -g -o queryfinder -L$(LIBS) -lgumbo -lchilkat-9.5.0 -lpthread 
 
 clean:
-	rm parser
+	rm queryfinder
 
 
 .PHONY: all clean
