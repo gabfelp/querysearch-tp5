@@ -84,6 +84,8 @@ class QueryFinder
 
         bool readDocNames();
 
+        bool readInvFile(vector<int> id_terms);
+
         bool processQuery(vector<string> terms);
 
 

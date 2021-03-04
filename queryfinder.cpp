@@ -143,6 +143,70 @@ bool QueryFinder::readDocNames(){
 
 }
 
+bool QueryFinder::readInvFile(vector<int> id_terms){
+  cout << "Reading lines on inv file" << "\n";
+  fstream file(INVERTED_PATH + INVERTED_NAME,ios::binary | ios::in );
+  string line,url;
+  std::vector<std::string> ve;
+  int num,doc,posi;
+  float tf;
+
+  std::map<int,int> doc_qtd;
+  std::map<int,float> doc_rank;
+
+  if(file.fail()){
+      cout <<" Some errors reading invFile\n" <<endl;
+      return false;
+  }
+  
+  for(auto id: id_terms){
+
+    GotoLine(file,id);
+    getline(file,line);
+    strtk::parse(line," ",ve);
+
+    for(int i = 1; i < ve.size(); i+= 2){
+      doc = atoi(ve[i].c_str());
+      posi = atoi(ve[i+1].c_str());
+
+      if(doc_qtd.find(doc)!= doc_qtd.end()){
+        //found doc
+        doc_qtd[doc]+=1;
+
+      }else{
+        //not found doc
+        doc_qtd.insert(make_pair(doc,1));
+
+      }
+
+    }
+    //ended for some term
+
+    for(auto item = doc_qtd.begin(); item != doc_qtd.end(); item++){
+      tf = (1 + log(item->second)); // tf
+
+
+      if(doc_rank.find(item->first) == doc_rank.end()){
+        //doc not found yet
+        doc_rank.insert(make_pair(item->first,0));
+        //doc_rank[item->first] += dictionaryMap[id].idf * tf;
+      }
+        
+      doc_rank[item->first] += dictionaryMap[id].idf * tf;
+
+      
+    }
+
+    doc_qtd.clear();
+    ve.clear();
+
+  }
+
+  // already have the top part
+
+  
+}
+
 bool QueryFinder::readVocab(){
   cout << "Reading Vocabulary" << "\n";
   ifstream file(INVERTED_PATH + VOCAB_NAME,ios::binary);
@@ -207,9 +271,9 @@ bool QueryFinder::startSearch(){
       strtk::parse(query," ",terms);
       
       cout << "query: "<< query << endl;
-      for(int q = 0; q < terms.size();q++){
-        cout << terms[q] <<endl;
-      }
+      //for(int q = 0; q < terms.size();q++){
+      //  cout << terms[q] <<endl;
+      //}
       processQuery(terms);
 
       numQueries++;
@@ -231,13 +295,23 @@ bool QueryFinder::startSearch(){
 }
 
 bool QueryFinder::processQuery(vector<string> terms){
+  vector<int> id_terms;
+  for(auto t : terms){
+    if(vocabMap.find(t)!= vocabMap.end()){
+      //cout << "The position of " << t <<" is " << vocabMap[t] <<"\n";
+      id_terms.push_back(vocabMap[t]);
+    }else{
+      //cout << "Can't find " << t << "\n";
+    }
+  }
+
   return true;
 }
 
 int main(int argc, char **argv){
     QueryFinder p;
 
-    //p.preStart();
+    p.preStart();
     //p.readDocNames();
     
     p.startSearch();
