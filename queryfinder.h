@@ -35,6 +35,7 @@ string INVERTED_NAME = "invfile.txt";
 string DICT_NAME = "dictionary.txt";
 string VOCAB_NAME = "vocabulary.txt";
 string QUERIES_NAME = "queries.txt";
+string TERM_POSITION_NAME = "termposition.txt";
 string QUERIES_RESULT_NAME = "queriesresult.txt";
 string DOCLINKS_NAME = "docslinks.txt";
 string DOCWIJ_NAME = "docwij.txt";
@@ -58,6 +59,8 @@ map<int,DictData> dictionaryMap;
 map<int,string> docNames;
 // doc wij terms
 map<int,float> docWij;
+// doc term posi
+map<int,int> termPosi;
 
 int WORD_ID = 0;
 double TOTAL_TIME_PARSING = 0;
@@ -71,6 +74,12 @@ class QueryFinder
         // return the time
         static double elapsed ();
 
+        bool writeDocNames();
+
+        bool writeDocWij();
+
+        bool writeDocPosi();
+
         // runs the parsing for collection
         void startParsing();
 
@@ -82,13 +91,11 @@ class QueryFinder
 
         bool readVocab();
 
-        bool writeDocNames();
-
-        bool writeDocWij();
-
         bool readDocNames();
 
         bool readDocWij();
+
+        bool readDocPosi();
 
         bool saveQuery(string query, string msg);
 

@@ -18,7 +18,7 @@ std::fstream& GotoLine(std::fstream& file, unsigned int num){
     file.seekg(0,std::ios::beg);
     string dummy;
     for(int i = 0; i < num; i++){
-        //file.ignore("\n");
+        //file.ignore('\n');
         getline(file,dummy);//file.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
     }
     return file;
@@ -211,6 +211,41 @@ bool QueryFinder::writeDocWij(){
 
 }
 
+bool QueryFinder::writeDocPosi(){
+  cout << "writing doc term position" << "\n";
+  ifstream file(INVERTED_PATH + INVERTED_NAME,ios::binary);
+  ofstream termposi(INVERTED_PATH+TERM_POSITION_NAME);
+  string line;
+  std::vector<std::string> ve;
+
+  if(file.fail()){
+      cout <<" Some errors reading docs\n" <<endl;
+      return false;
+  }
+  if(termposi.fail()){
+    cout <<" Some errors on output file\n" <<endl;
+    return false;
+  }
+
+  int docNum = 0;
+  int currTerm = 0;
+  int posi = file.tellg();
+
+  termposi << currTerm << " " << posi << "\n";
+  while(getline(file, line)){
+    currTerm++;
+    termposi << currTerm << " " << file.tellg() << "\n";
+
+    cout << currTerm << "\n";
+    
+  }
+  file.close();
+  termposi.close();
+  //cout << docNum <<"\n";
+  //cout << docNames[2] <<"\n";
+
+}
+
 bool QueryFinder::readDocNames(){
   cout << "Reading doc links" << "\n";
   ifstream file(INVERTED_PATH + DOCLINKS_NAME,ios::binary);
@@ -268,9 +303,39 @@ bool QueryFinder::readDocWij(){
 
 }
 
+bool QueryFinder::readDocPosi(){
+  cout << "Reading doc term posi" << "\n";
+  ifstream file(INVERTED_PATH + TERM_POSITION_NAME,ios::binary);
+  string line;
+  std::vector<std::string> ve;
+  int term;
+  int posi;
+
+  if(file.fail()){
+      cout <<" Some errors reading docs\n" <<endl;
+      return false;
+  }
+  int docNum = 0;
+  while(getline(file,line)){
+    //std::string contents;
+    strtk::parse(line," ",ve);
+    term = atoi(ve[0].c_str());
+    posi = atoi(ve[1].c_str());
+
+    termPosi.insert(make_pair(term,posi));
+    ve.clear();
+    //cout << line<<"\n";
+  }
+
+  //cout << docNames.size() <<"\n";
+  //cout << termPosi[2] <<"\n";
+
+}
+
+
 bool QueryFinder::readInvFile(map<int,int> id_terms_qtd, string query){
   cout << "Reading lines on inv file" << "\n";
-  fstream file(INVERTED_PATH + INVERTED_NAME,ios::binary | ios::in );
+  fstream file(INVERTED_PATH + INVERTED_NAME,ios::in );
   string line,url;
   std::vector<std::string> ve;
   int num,doc,posi;
@@ -286,10 +351,11 @@ bool QueryFinder::readInvFile(map<int,int> id_terms_qtd, string query){
   
   for(auto id = id_terms_qtd.begin(); id != id_terms_qtd.end(); id++){
   //for(auto id: id_terms_qtd){
-
-    GotoLine(file,id->first);
+    cout << id->first << "\n";
+    GotoLine2(file,termPosi[id->first]);
     getline(file,line);
     strtk::parse(line," ",ve);
+    cout << line << "\n";
     line = "";
     for(int i = 1; i < ve.size(); i+= 2){
       doc = atoi(ve[i].c_str());
@@ -382,11 +448,12 @@ bool QueryFinder::preStart(){
   double t0 = elapsed();
 
   cout << "Loading some data for memory...\n";
-
+  readDocPosi();
   readDict();
   readVocab();
   readDocNames();
   readDocWij();
+  
 
   double t1 = elapsed();
   std::cout << "Total prestart time : "<< t1-t0 << "s" << endl << endl;
@@ -476,10 +543,10 @@ bool QueryFinder::processQuery(map<string, int> terms, string query){
 
 int main(int argc, char **argv){
     QueryFinder p;
-
-    p.preStart();
     //p.readDocNames();
-    //p.writeDocWij();
+    //p.writeDocPosi();
+    p.preStart();
+    
     p.startSearch();
 
 

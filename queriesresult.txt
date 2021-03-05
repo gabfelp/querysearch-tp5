@@ -1,0 +1,16 @@
+query: jair bolsonaro
+page name: https://app.assertivasolucoes.com.br/
+rank: inf
+page name: http://basecoc.coc.fiocruz.br
+rank: inf
+page name: http://buscatextual.cnpq.br/buscatextual/visualizacv.jsp?id=K4783159E5
+rank: inf
+page name: http://buscatextual.cnpq.br/buscatextual/visualizacv.jsp?id=K4783483Z7
+rank: inf
+page name: http://buscatextual.cnpq.br/buscatextual/visualizacv.jsp?id=K4763314U7
+rank: inf
+query: eduardo bolsonaro
+query: eduardo bolsonaro
+query: eduardo bolsonaro
+query: eduardo bolsonaro
+query: eduardo bolsonaro
