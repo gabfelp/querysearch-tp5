@@ -18,6 +18,7 @@ std::fstream& GotoLine(std::fstream& file, unsigned int num){
     file.seekg(0,std::ios::beg);
     string dummy;
     for(int i = 0; i < num; i++){
+        //file.ignore("\n");
         getline(file,dummy);//file.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
     }
     return file;
@@ -115,6 +116,101 @@ bool QueryFinder::writeDocNames(){
 
 }
 
+bool QueryFinder::saveQuery(string query, string msg){
+  ofstream file(QUERIES_RESULT_NAME,std::ofstream::app);
+
+  if(file.fail()){
+      cout <<" Some errors saving results\n" <<endl;
+      return false;
+  }
+
+  file << "query: " << query <<"\n";
+  file << msg;
+
+  file.close();
+
+  //cout << docNum <<"\n";
+  //cout << docNames[2] <<"\n";
+
+}
+
+
+bool QueryFinder::writeDocWij(){
+  vector<float> docs_wij(1000068);
+  cout << "writing doc Wij" << "\n";
+  ifstream file(INVERTED_PATH + INVERTED_NAME,ios::binary);
+  ofstream docwij(INVERTED_PATH+DOCWIJ_NAME);
+  string line;
+  float tf,idft;
+  std::vector<std::string> ve;
+  int doc, posi, numTerm;
+  std::map<int,int> doc_qtd;
+
+  if(file.fail()){
+      cout <<" Some errors reading docs\n" <<endl;
+      return false;
+  }
+  if(docwij.fail()){
+    cout <<" Some errors on output file\n" <<endl;
+    return false;
+  }
+
+  int docNum = 0;
+  int currTerm = 0;
+
+  while(getline(file, line)){
+
+    strtk::parse(line," ",ve);
+    line = "";
+    //numTerm = atoi(ve[0].c_str());
+    //cout << line <<"\n";
+    
+    for(int i = 1; i < ve.size(); i+= 2){
+      doc = atoi(ve[i].c_str());
+      //posi = atoi(ve[i+1].c_str());
+
+      if(doc_qtd.find(doc)!= doc_qtd.end()){
+        //found doc
+        doc_qtd[doc]+=1;
+
+      }else{
+        //not found doc
+        doc_qtd.insert(make_pair(doc,1));
+
+      }
+
+    }
+    
+    ve.clear();
+    
+    //ended for some term
+    //cout << "ARRIIIIIIIIIIIIIIVED";
+    idft = dictionaryMap[currTerm].idf;
+    for(auto item = doc_qtd.begin(); item != doc_qtd.end(); item++){
+      tf = (1 + log(item->second)); // tf
+
+      docs_wij[item->first] += pow(idft * tf, 2.0);
+    }
+
+    doc_qtd.clear();
+
+    currTerm++;
+    cout << currTerm <<"\n";
+
+  }
+  file.close();
+
+  for(int i = 0; i < docs_wij.size(); i++){
+    docwij << i << " " << sqrt(docs_wij[i]) << "\n";
+  }
+
+
+  docwij.close();
+  //cout << docNum <<"\n";
+  //cout << docNames[2] <<"\n";
+
+}
+
 bool QueryFinder::readDocNames(){
   cout << "Reading doc links" << "\n";
   ifstream file(INVERTED_PATH + DOCLINKS_NAME,ios::binary);
@@ -143,13 +239,42 @@ bool QueryFinder::readDocNames(){
 
 }
 
-bool QueryFinder::readInvFile(vector<int> id_terms){
+bool QueryFinder::readDocWij(){
+  cout << "Reading doc wij" << "\n";
+  ifstream file(INVERTED_PATH + DOCWIJ_NAME,ios::binary);
+  string line;
+  float wij;
+  std::vector<std::string> ve;
+  int num;
+
+  if(file.fail()){
+      cout <<" Some errors reading docs\n" <<endl;
+      return false;
+    }
+  int docNum = 0;
+  while(getline(file,line)){
+    //std::string contents;
+    strtk::parse(line," ",ve);
+    num = atoi(ve[0].c_str());
+    wij = stof(ve[1]);
+
+    docWij.insert(make_pair(num,wij));
+    ve.clear();
+    //cout << line<<"\n";
+  }
+
+  //cout << docNames.size() <<"\n";
+  //cout << docNames[2] <<"\n";
+
+}
+
+bool QueryFinder::readInvFile(map<int,int> id_terms_qtd, string query){
   cout << "Reading lines on inv file" << "\n";
   fstream file(INVERTED_PATH + INVERTED_NAME,ios::binary | ios::in );
   string line,url;
   std::vector<std::string> ve;
   int num,doc,posi;
-  float tf;
+  float tf, tfquery;
 
   std::map<int,int> doc_qtd;
   std::map<int,float> doc_rank;
@@ -159,15 +284,16 @@ bool QueryFinder::readInvFile(vector<int> id_terms){
       return false;
   }
   
-  for(auto id: id_terms){
+  for(auto id = id_terms_qtd.begin(); id != id_terms_qtd.end(); id++){
+  //for(auto id: id_terms_qtd){
 
-    GotoLine(file,id);
+    GotoLine(file,id->first);
     getline(file,line);
     strtk::parse(line," ",ve);
-
+    line = "";
     for(int i = 1; i < ve.size(); i+= 2){
       doc = atoi(ve[i].c_str());
-      posi = atoi(ve[i+1].c_str());
+      //posi = atoi(ve[i+1].c_str());
 
       if(doc_qtd.find(doc)!= doc_qtd.end()){
         //found doc
@@ -181,10 +307,13 @@ bool QueryFinder::readInvFile(vector<int> id_terms){
 
     }
     //ended for some term
+    ve.clear();
+
+    float idf2 = dictionaryMap[id->first].idf;
 
     for(auto item = doc_qtd.begin(); item != doc_qtd.end(); item++){
       tf = (1 + log(item->second)); // tf
-
+      tfquery = (1 + log(id->second)); // quantity of terms in the query
 
       if(doc_rank.find(item->first) == doc_rank.end()){
         //doc not found yet
@@ -192,19 +321,36 @@ bool QueryFinder::readInvFile(vector<int> id_terms){
         //doc_rank[item->first] += dictionaryMap[id].idf * tf;
       }
         
-      doc_rank[item->first] += dictionaryMap[id].idf * tf;
+      doc_rank[item->first] += tfquery * idf2 * tf * idf2; // numerator
 
       
     }
 
     doc_qtd.clear();
-    ve.clear();
 
   }
 
   // already have the top part
+  vector<pair<float,int>> vecSort;
+  for(auto d = doc_rank.begin(); d != doc_rank.end(); d++){
+    doc_rank[d->first] /= docWij[d->first];
+    vecSort.push_back(make_pair(doc_rank[d->first],d->first));
+  }
 
+  sort(vecSort.rbegin(),vecSort.rend());
+  string msg = "";
+  //for (std::map<int, float>::iterator i = doc_rank.begin(); i != doc_rank.end(); i++){
+  for(int i = 0; i < vecSort.size(); i++){
+    if(i >=5){
+      break;
+    }
+    msg += "page name: "+docNames[vecSort[i].second]+"\nrank: "+to_string(vecSort[i].first)+"\n";
+  }
+    
+
+  cout << msg;
   
+  saveQuery(query, msg);
 }
 
 bool QueryFinder::readVocab(){
@@ -240,6 +386,7 @@ bool QueryFinder::preStart(){
   readDict();
   readVocab();
   readDocNames();
+  readDocWij();
 
   double t1 = elapsed();
   std::cout << "Total prestart time : "<< t1-t0 << "s" << endl << endl;
@@ -254,6 +401,7 @@ bool QueryFinder::startSearch(){
   double t0 = elapsed();
   int numQueries = 0; 
   string query;
+  map<string,int> term_qtd;
   try{
 
     std::ifstream queries;
@@ -271,13 +419,23 @@ bool QueryFinder::startSearch(){
       strtk::parse(query," ",terms);
       
       cout << "query: "<< query << endl;
-      //for(int q = 0; q < terms.size();q++){
-      //  cout << terms[q] <<endl;
-      //}
-      processQuery(terms);
+      for(int q = 0; q < terms.size();q++){
+
+        if(term_qtd.find(terms[q])!= term_qtd.end()){
+          //cout << "The position of " << t <<" is " << vocabMap[t] <<"\n";
+          term_qtd[terms[q]] += 1;
+        }else{
+          term_qtd.insert(make_pair(terms[q],1));
+          //cout << "Can't find " << t << "\n";
+        }
+        //cout << terms[q] <<endl;
+      }
+
+      processQuery(term_qtd, query);
 
       numQueries++;
       terms.clear();
+      term_qtd.clear();
     }
 
   }catch (int e){
@@ -294,15 +452,23 @@ bool QueryFinder::startSearch(){
 
 }
 
-bool QueryFinder::processQuery(vector<string> terms){
-  vector<int> id_terms;
-  for(auto t : terms){
-    if(vocabMap.find(t)!= vocabMap.end()){
+bool QueryFinder::processQuery(map<string, int> terms, string query){
+  map<int, int> id_terms;
+  for(auto t  = terms.begin(); t != terms.end(); t++){
+    if(vocabMap.find(t->first)!= vocabMap.end()){
       //cout << "The position of " << t <<" is " << vocabMap[t] <<"\n";
-      id_terms.push_back(vocabMap[t]);
-    }else{
-      //cout << "Can't find " << t << "\n";
+      id_terms.insert(make_pair(vocabMap[t->first],t->second));
+      //cout << "The position of " << t->first <<" is " << vocabMap[t->first] <<" qtd "<< t->second <<"\n";
     }
+      //cout << "Can't find " << t << "\n";
+  }
+
+  if(id_terms.size() == 0){
+    string msg = "no matches for your query .. \n";
+    cout << msg;
+    saveQuery(query, msg);
+  }else{
+    readInvFile(id_terms, query);
   }
 
   return true;
@@ -313,7 +479,7 @@ int main(int argc, char **argv){
 
     p.preStart();
     //p.readDocNames();
-    
+    //p.writeDocWij();
     p.startSearch();
 
 

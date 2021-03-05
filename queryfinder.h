@@ -35,7 +35,9 @@ string INVERTED_NAME = "invfile.txt";
 string DICT_NAME = "dictionary.txt";
 string VOCAB_NAME = "vocabulary.txt";
 string QUERIES_NAME = "queries.txt";
+string QUERIES_RESULT_NAME = "queriesresult.txt";
 string DOCLINKS_NAME = "docslinks.txt";
+string DOCWIJ_NAME = "docwij.txt";
 
 string OUT_FOLDER = "./out";
 //string RUN_FOLDER = OUT_FOLDER + "/runs";
@@ -45,8 +47,6 @@ string OUT_FOLDER = "./out";
 //string INV_PATH = OUT_FOLDER+"/invfileoneline.txt";
 //string DIC_PATH = OUT_FOLDER+"/dictionaryoneline.txt";
 //string RUN_PATH = RUN_FOLDER+"/run";
-int LIMIT = 2000000000;//1.5 gb
-int LINES_BATCH_SIZE_INV = LIMIT;
 //int NUM_DOCS = 1000068;
 
 
@@ -56,6 +56,8 @@ map<std::string, int> vocabMap;
 map<int,DictData> dictionaryMap;
 // doc names
 map<int,string> docNames;
+// doc wij terms
+map<int,float> docWij;
 
 int WORD_ID = 0;
 double TOTAL_TIME_PARSING = 0;
@@ -82,11 +84,17 @@ class QueryFinder
 
         bool writeDocNames();
 
+        bool writeDocWij();
+
         bool readDocNames();
 
-        bool readInvFile(vector<int> id_terms);
+        bool readDocWij();
 
-        bool processQuery(vector<string> terms);
+        bool saveQuery(string query, string msg);
+
+        bool readInvFile(map<int,int> id_terms,string query);
+
+        bool processQuery(map<string,int> terms,string query);
 
 
         
