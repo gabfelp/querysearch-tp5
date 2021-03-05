@@ -17,8 +17,6 @@
 #include <math.h> 
 
 
-#include "gumbo.h"
-#include <CkString.h>
 #include "dictdata.h"
 #include "utils/json.hpp"
 #include "utils/strtk.hpp"
@@ -39,17 +37,7 @@ string TERM_POSITION_NAME = "termposition.txt";
 string QUERIES_RESULT_NAME = "queriesresult.txt";
 string DOCLINKS_NAME = "docslinks.txt";
 string DOCWIJ_NAME = "docwij.txt";
-
-string OUT_FOLDER = "./out";
-//string RUN_FOLDER = OUT_FOLDER + "/runs";
-//string VOCAB_PATH = OUT_FOLDER+"/vocabulary.txt"; // where the vocabulary will be placed
-//string INDEX_PATH = OUT_FOLDER+"/index.txt"; 
-//string TEMP_PATH = OUT_FOLDER+"/tempfile.txt";
-//string INV_PATH = OUT_FOLDER+"/invfileoneline.txt";
-//string DIC_PATH = OUT_FOLDER+"/dictionaryoneline.txt";
-//string RUN_PATH = RUN_FOLDER+"/run";
-//int NUM_DOCS = 1000068;
-
+std::vector<std::string> words2avoid{"de","a","o","da","no","na","e","em","qual"};
 
 // represents the term and its id
 map<std::string, int> vocabMap;
@@ -62,12 +50,6 @@ map<int,float> docWij;
 // doc term posi
 map<int,int> termPosi;
 
-int WORD_ID = 0;
-double TOTAL_TIME_PARSING = 0;
-double TOTAL_TIME_SORTING = 0;
-int TOTAL_WORDS_COUNT = 0;
-int TOTAL_DOCTERM_COUNT = 0;
-int TOTAL_VOCABULARY_SIZE = 0;
 class QueryFinder
 {
     public:
@@ -86,15 +68,15 @@ class QueryFinder
         bool preStart();
 
         bool startSearch();
-
+        //load dict
         bool readDict();
-
+        //load vocab
         bool readVocab();
-
+        //load doc urls
         bool readDocNames();
-
+        //load doc wij
         bool readDocWij();
-
+        //load doc position
         bool readDocPosi();
 
         bool saveQuery(string query, string msg);

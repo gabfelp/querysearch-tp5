@@ -1,4 +1,5 @@
 query: eduardo bolsonaro
+number of results: 100267
 page URL: https://andrebona.com.br/tag/deputado-eduardo-bolsonaro/
 rank: 1.372766
 page URL: https://andrebona.com.br/tag/eduardo-bolsonaro-em-washington/
@@ -10,6 +11,7 @@ rank: 1.248561
 page URL: https://andrebona.com.br/tag/itamaraty/
 rank: 1.235288
 query: corona vírus
+number of results: 43185
 page URL: https://advocaciajacobi.com.br/tag/corona-virus/
 rank: 2.133896
 page URL: https://advmanoelneto.jusbrasil.com.br/edicoes
@@ -20,29 +22,20 @@ page URL: https://advocaciajacobi.com.br/saiba-como-o-corona-virus-podera-influe
 rank: 1.709660
 page URL: http://artigoscheckpoint.thomsonreuters.com.br/index.php?home=home_artigos&m=_&autor_x=1100
 rank: 1.620241
-query: eleição 2020
-page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/sp/sao-paulo/
-rank: 1.153809
-page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/rj/rio-de-janeiro/
-rank: 1.086005
-page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/ce/fortaleza/
-rank: 1.053045
-page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/am/manaus/
-rank: 1.020704
-page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/pa/belem/
-rank: 1.020154
-query: álcool gel
-page URL: https://assistenciatecnica.uol.com.br/includes/sidebar-consultoria.inc
-rank: 39.574421
-page URL: https://covid.saude.gov.br/
-rank: 36.058090
-page URL: https://conta.uol.com.br/login?t=default&env=visitante&dest=https://batepapo.uol.com.br
-rank: 30.844152
-page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/sp/sao-paulo/
-rank: 30.072334
-page URL: https://bi.saude.ba.gov.br/transparencia/
-rank: 28.560717
+query: governador re-eleito
+number of results: 58917
+page URL: http://agenciaal.alesc.sc.gov.br/index.php/content_block_impeachment/sessaeo-que-votaria-relatorio-do-segundo-impeachment-contra-o-governador-e
+rank: 0.812161
+page URL: http://anticast.com.br/tag/governador/
+rank: 0.586434
+page URL: https://ajufe.org.br/imprensa/noticias/10802-ajufe-acompanha-visita-institucional-ao-governador-do-espirito-santo?tmpl=component&print=1&layout=default
+rank: 0.530109
+page URL: http://agenciaal.alesc.sc.gov.br/index.php/foto_noticia_single/reforma-administrativa-presidente-julio-garcia-recebe-das-maeos-do-governad
+rank: 0.474570
+page URL: http://agendacapital.com.br/tag/governador-do-rio/
+rank: 0.442313
 query: celular novo
+number of results: 288769
 page URL: https://andrebona.com.br/tag/aplicativos-para-limpar-a-memoria-do-celular/
 rank: 0.691086
 page URL: https://andrebona.com.br/tag/melhor-app-para-limpar-celular-2019/
@@ -53,25 +46,255 @@ page URL: https://andrebona.com.br/tag/aplicativo-para-limpar-celular-iphone/
 rank: 0.678156
 page URL: https://andrebona.com.br/tag/controlar-conta-do-celular/
 rank: 0.628078
-query: carro usado
-page URL: https://covid.saude.gov.br/
-rank: 44.636425
-page URL: https://apfit.org.br/
-rank: 34.912704
-page URL: http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4489197A1=
-rank: 26.585827
-page URL: http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4451294H2=
-rank: 26.495396
-page URL: http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4760893E1
-rank: 26.309147
-query: dinheiro extra
-page URL: https://acervomais.com.br/index.php/artigos/article/view/2236/1013
-rank: 3.116419
-page URL: https://acervomais.com.br/index.php/artigos/article/view/2236/1012
-rank: 3.116419
-page URL: https://acervomais.com.br/index.php/saude/article/view/4915/3090
-rank: 2.786622
-page URL: https://acervomais.com.br/index.php/saude/article/view/4484/2547
-rank: 2.708231
-page URL: https://acervomais.com.br/index.php/artigos/article/view/1670/804
-rank: 2.703862
+query: eleição 2020
+number of results: 532107
+page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/sp/sao-paulo/
+rank: 1.153809
+page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/rj/rio-de-janeiro/
+rank: 1.086005
+page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/ce/fortaleza/
+rank: 1.053045
+page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/am/manaus/
+rank: 1.020704
+page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/pa/belem/
+rank: 1.020154
+query: receita bolo
+number of results: 56383
+page URL: https://armazemdocolono.com.br/produto-tag/mistura-para-bolo-de-banana-500g/
+rank: 1.788294
+page URL: https://33giga.com.br/tags/bolo/
+rank: 1.785597
+page URL: https://armazemdocolono.com.br/produto-tag/bolo-de-laranja-s-gluten-s-lactose/?add-to-cart=10142
+rank: 1.720798
+page URL: https://armazemdocolono.com.br/produto-tag/bolo-de-laranja-s-gluten-s-lactose/
+rank: 1.720798
+page URL: https://armazemdocolono.com.br/produto-tag/bolo-de-cacau-s-gluten-s-lactose/?add-to-cart=10141
+rank: 1.707125
+query: vida celebridades
+number of results: 185359
+page URL: https://33giga.com.br/tags/celebridades/page/3/
+rank: 1.121598
+page URL: https://33giga.com.br/tags/celebridades/
+rank: 0.935089
+page URL: https://33giga.com.br/tags/celebridades/page/2/
+rank: 0.825108
+page URL: https://arapiraca.7segundos.com.br/tags/seu-francisco/noticias/celebridades
+rank: 0.775272
+page URL: https://arapiraca.7segundos.com.br/tags/santa-catarina/entretenimento/celebridades
+rank: 0.749245
+query: maratona
+number of results: 2925
+page URL: http://acmag.org.br/2014/08/maratona-pao-de-acucar-27072014/
+rank: 2.092588
+page URL: http://acmag.org.br/2018/07/17a-maratona-pao-de-acucar-de-revezamento-de-fortaleza-08-07-2018/
+rank: 1.787557
+page URL: http://acmag.org.br/2017/07/16a-maratona-pao-de-acucar-de-revezamento-de-fortaleza-09072016/
+rank: 1.692619
+page URL: http://asaseeixos.com.br/index.php/tag/maratona-do-samba/
+rank: 1.692575
+page URL: https://33giga.com.br/tags/maratona/
+rank: 1.641101
+query: teorias de conspiração
+number of results: 20525
+page URL: http://anticast.com.br/tag/teorias/
+rank: 2.274729
+page URL: http://anticast.com.br/tag/conspiracao/
+rank: 1.962556
+page URL: http://anticast.com.br/tag/11-de-setembro/
+rank: 1.604868
+page URL: https://acervomais.com.br/index.php/enfermagem/article/view/5159/3108
+rank: 1.542838
+page URL: http://anticast.com.br/tag/aliens/
+rank: 1.460029
+query: recém-formados
+number of results: 360
+page URL: https://abraji.org.br/noticias/curso-a-tarde-de-jornalismo-esta-com-inscricoes-abertas-para-recem-formados-e-estudantes-em-vias-de-se-formar
+rank: 2.270478
+page URL: https://abraji.org.br/noticias?page=50
+rank: 1.621157
+page URL: https://abraji.org.br/noticias?filter_selected=formacao&page=18
+rank: 1.531186
+page URL: https://abraji.org.br/noticias/usp-oferece-cursos-gratuitos-para-estudantes-universitarios-e-recem-formados
+rank: 1.491630
+page URL: https://6minutos.uol.com.br/economia/china-vai-impulsionar-investimentos-e-empregos-de-recem-formados-e-imigrantes/
+rank: 1.479887
+query: desvalorização
+number of results: 1661
+page URL: https://andrebona.com.br/tag/por-que-acontece-desvalorizacao-de-imoveis/
+rank: 2.937260
+page URL: https://andrebona.com.br/tag/motivos-desvalorizacao-de-imoveis/
+rank: 2.928066
+page URL: https://andrebona.com.br/tag/processo-de-desvalorizacao-de-imoveis-residenciais/
+rank: 2.879682
+page URL: https://andrebona.com.br/tag/imovel-sem-espaco/
+rank: 2.705528
+page URL: https://andrebona.com.br/tag/imovel-sem-documentacao/
+rank: 2.694716
+query: gambito da rainha
+number of results: 6249
+page URL: http://almanaquevirtual.com.br/author/lohan-lage/
+rank: 2.486459
+page URL: https://agorarn.com.br/ultimas/o-gambito-da-rainha-se-torna-uma-das-series-mais-vistas-da-netflix/
+rank: 2.019532
+page URL: http://almanaquevirtual.com.br/o-gambito-da-rainha/
+rank: 1.977255
+page URL: http://almanaquevirtual.uol.com.br/ou-tudo-ou-nada/ou-tudo-ou-nada-1/
+rank: 1.955639
+page URL: http://almanaquevirtual.com.br/teatro/indice/?letra=q
+rank: 1.930424
+query: ceia de natal
+number of results: 101028
+page URL: https://andrebona.com.br/tag/economizar-na-ceia/
+rank: 1.829618
+page URL: https://altairtavares.com.br/tag/ceia-de-natal/
+rank: 1.446891
+page URL: https://agenciabrasilia.df.gov.br/topicos/13-mil-cestas-especiais-de-natal/
+rank: 1.385002
+page URL: https://agenciabrasilia.df.gov.br/categoria/nosso-natal-2020/
+rank: 1.304511
+page URL: https://agenciabrasilia.df.gov.br/2020/12/20/ceia-especial-de-natal-para-abrigados-do-instituto-inclusao/
+rank: 1.247398
+query: financiar carro
+number of results: 35022
+page URL: https://andrebona.com.br/tag/financiar-carro/
+rank: 2.082093
+page URL: https://andrebona.com.br/tag/financiar-um-imovel/
+rank: 2.009504
+page URL: https://andrebona.com.br/tag/vale-a-pena-financiar-imovel/
+rank: 1.981334
+page URL: https://andrebona.com.br/tag/pagar-aluguel-ou-financiar/
+rank: 1.961216
+page URL: https://andrebona.com.br/tag/financiar-imovel-autonomo/
+rank: 1.863998
+query: universidades
+number of results: 23248
+page URL: https://acervomais.com.br/index.php/educacional/article/view/1629/963
+rank: 1.545191
+page URL: http://anticast.com.br/tag/universidades/
+rank: 1.029187
+page URL: https://anprotec.org.br/site/wp-content/themes/betheme/ebook_frame.php?id=25424
+rank: 0.906376
+page URL: http://anticast.com.br/tag/mec/
+rank: 0.765441
+page URL: https://agenciabrasil.ebc.com.br/tags/universidades-federais-0
+rank: 0.735775
+query: cauã reymond
+number of results: 482
+page URL: http://aquiacontece.com.br/noticia/famosos/06/10/2020/caua-reymond-faz-ensaio-com-regata-transparente-e-unhas-pintadas/156557/imprimir
+rank: 5.006447
+page URL: https://agazetadoamapa.com.br/noticia/2297/caua-reymond-curte-foto-de-grazi-massafera-sem-roupa
+rank: 4.051126
+page URL: https://anamaria.uol.com.br/noticias/ultimas-noticias/grazi-massafera-comenta-post-de-caua-reymond-em-rede-social-foto-linda.phtml
+rank: 3.829664
+page URL: https://anamaria.uol.com.br/noticias/ultimas-noticias/caua-reymond-aparece-pedalando-apenas-de-toalha-e-quase-mostra-demais.phtml
+rank: 3.637901
+page URL: https://anamaria.uol.com.br/noticias/ultimas-noticias/caua-reymond-cobra-flamengo-por-falta-de-acordo-com-familias-vitimas-de-incendio.phtml
+rank: 3.606605
+query: imóvel novo
+number of results: 266709
+page URL: https://andrebona.com.br/tag/compra-de-imovel/
+rank: 1.399209
+page URL: https://andrebona.com.br/tag/planejar-compra-de-imovel/
+rank: 1.368969
+page URL: https://andrebona.com.br/tag/como-escolher-um-imovel/
+rank: 1.341532
+page URL: https://andrebona.com.br/tag/planejamento-para-compra-de-imovel/
+rank: 1.335335
+page URL: https://andrebona.com.br/tag/imovel-na-planta/
+rank: 1.321844
+query: mega-sena
+number of results: 2482
+page URL: https://ajn1.com.br/urbano/mega-sena-sorteia-nesta-quarta-feira-17-premio-de-r-3-milhoes/
+rank: 1.772503
+page URL: https://ajn1.com.br/urbano/mega-sena-sorteia-hoje-premio-de-r-56-milhoes/
+rank: 1.727508
+page URL: https://aconteceonline.com.br/mega-sena-tem-previsao-de-premio-de-r-26-milhoes/
+rank: 1.722586
+page URL: https://aconteceonline.com.br/mega-sena-pode-pagar-hoje-premio-de-r-344-milhoes/
+rank: 1.720763
+page URL: https://ajn1.com.br/urbano/sergipano-de-lagarto-acerta-sozinho-os-numeros-da-mega-sena/
+rank: 1.716462
+query: atriz morta
+number of results: 30248
+page URL: https://bahiaeconomica.com.br/wp/2020/10/18/empresaria-e-morta-em-condominio-de-luxo-de-salvador/
+rank: 1.545700
+page URL: https://aplicacao.mpmg.mp.br/xmlui/handle/123456789/337
+rank: 1.395840
+page URL: https://ajn1.com.br/urbano/mulher-e-encontrada-morta-dentro-de-tonel/
+rank: 1.383487
+page URL: https://ajn1.com.br/policia/mulher-e-atropelada-e-morta-na-br-101/
+rank: 1.236909
+page URL: https://ajn1.com.br/policia/mulher-e-morta-com-um-tiro-no-rosto-em-centro-de-distribuicao/
+rank: 1.224181
+query: acidente de trânsito
+number of results: 78501
+page URL: https://acervomais.com.br/index.php/saude/article/view/4677/3200
+rank: 1.097572
+page URL: https://ajn1.com.br/policia/cabo-da-pm-morre-em-acidente-no-transito/
+rank: 1.065631
+page URL: https://ajn1.com.br/urbano/homem-morre-em-acidente-de-transito-no-dia-aniversario/
+rank: 0.981252
+page URL: https://acarlosbarata.jusbrasil.com.br/edicoes
+rank: 0.972850
+page URL: https://ajn1.com.br/politica/prefeito-de-sao-miguel-do-aleixo-morre-em-acidente-de-transito/
+rank: 0.960468
+query: síndrome de down
+number of results: 22224
+page URL: https://alana.org.br/tag/sindrome-de-down/page/2/
+rank: 2.807779
+page URL: https://acervomais.com.br/index.php/artigos/article/view/4415/2843
+rank: 2.599808
+page URL: https://acervomais.com.br/index.php/artigos/article/view/4415/2784
+rank: 2.599808
+page URL: https://alana.org.br/author/laura/page/25/
+rank: 2.480795
+page URL: https://agroemdia.com.br/tag/sindrome-down/
+rank: 2.374335
+query: time psg
+number of results: 43204
+page URL: http://agendacapital.com.br/tag/psg/
+rank: 2.576993
+page URL: http://agendacapital.com.br/tag/liga-dos-campeoes/
+rank: 2.353628
+page URL: http://agendacapital.com.br/tag/champions-league/
+rank: 2.277223
+page URL: https://ajn1.com.br/esporte/neymar-diz-que-seguira-no-psg-para-buscar-o-titulo-da-liga-dos-campeoes/
+rank: 2.269388
+page URL: http://agendacapital.com.br/tag/racismo-no-futebol/
+rank: 1.973119
+query: música coreografia
+number of results: 45385
+page URL: https://33giga.com.br/tags/musicais/
+rank: 1.695919
+page URL: https://anamaria.uol.com.br/noticias/ultimas-noticias/filha-de-wesley-safadao-reproduz-a-famosa-coreografia-de-manu-gavassi.phtml
+rank: 1.611362
+page URL: https://anamaria.uol.com.br/noticias/ultimas-noticias/mayra-cardi-registra-a-filha-sophia-fazendo-coreografia-de-danca.phtml
+rank: 1.563797
+page URL: https://anamaria.uol.com.br/noticias/ultimas-noticias/fernanda-gentil-faz-coreografia-e-diverte-internautas-nas-redes-sociais.phtml
+rank: 1.558421
+page URL: https://anamaria.uol.com.br/noticias/famosos/deborah-secco-se-diverte-ao-apresentar-coreografia-com-a-filha-nas-redes-sociais.phtml
+rank: 1.493325
+query: bolsa de valores
+number of results: 121590
+page URL: https://andrebona.com.br/tag/quero-investir-na-bolsa-de-valores/
+rank: 1.278306
+page URL: https://andrebona.com.br/tag/como-comecar-a-investir-na-bolsa-de-valores/
+rank: 1.276036
+page URL: https://andrebona.com.br/tag/investir-na-bolsa-de-valores-vale-a-pena/
+rank: 1.256154
+page URL: https://andrebona.com.br/tag/quero-investir-na-bolsa/
+rank: 1.247617
+page URL: https://andrebona.com.br/tag/valor-minimo-para-investir-na-bolsa-de-valores/
+rank: 1.241276
+query: elon musk
+number of results: 440
+page URL: https://aeromagazine.uol.com.br/artigo/?q=Elon%20Musk
+rank: 5.377024
+page URL: https://andrebona.com.br/tag/elon-musk/
+rank: 5.092362
+page URL: https://6minutos.uol.com.br/?s=elon+musk
+rank: 3.735818
+page URL: https://acestartups.com.br/o-que-aprender-com-elon-musk/
+rank: 3.676270
+page URL: https://ajn1.com.br/mundo/tom-cruise-negocia-gravar-filme-no-espaco-com-a-nasa/
+rank: 3.313380

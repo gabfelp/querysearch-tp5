@@ -1,56 +1,52 @@
-# Parser 4th Assignment
+# QueryProcessor 5th Assignment
 
-This is a parser for crawled webpages. 
-It was optimized for the 4rd Information Retrieval Assignment, from UFMG.
-Now it's possible to produce the inverted list index for collections that don't fit in RAM
+This is a Query Processor that search most relevant documents in a collection
+It was constructed for 5rd Information Retrieval Assignment, from UFMG.
 
 ## Requirements
 
-You must have the [Chilkat](https://www.chilkatsoft.com/downloads.asp), [Gumbo-Parser](https://github.com/google/gumbo-parser) and pthread libraries installed.
-
-The [C++ Json Library](https://github.com/nlohmann/json) is also included on utils folder, for manipulating the json collection.
+The [C++ Json Library](https://github.com/nlohmann/json) and [strtk library](https://github.com/ArashPartow/strtk) are included on utils folder, for manipulating the json collection and the strings.
 
 ## Usage
 
-The parser will start the execution by parsing the HTML content inside json collection.
-After this, the temporary inverted file created will be sorted.
+The query processor will start by reading a lot of pre wrote files : 
+dictionary.txt - the dictionary with term_id startline,endline,idf
+docslinks.txt - an file that has id_document url
+docwij.txt - the docwij file. It was precomputed the value of each document wij, for doing the rank evaluation. id_document wij
+invfile.txt - the invfile. it was modified so each line is a different term
+termposition.txt - stores the term start on invfile. term_id position
+vocabulary.txt - the vocabulary with term_id term
 
-For changing the path for your collection repository or the size of the collection or the path for output, you can do it on parser.h.
+For changing the path for any of these files, you can do it on parser.h.
+
+There are functions on code for generating each one of these pre computed files by collection and invfile itself
 
 
-You can compile the parser by doing make:
+You can compile the finder by doing make:
 ```
 make
 ```
-If something goes wrong with make, check the version of Chilkat installed on your machine (MakeFile by default runs with version 9.5.0 of Chilkat. For changes, do it on -lchilkat-9.5.0).
 
-Other problems that may occur are the include and library paths, check if they are correct.
+Problems that may occur are the include and file paths, check if they are correct.
+
+There must be a file named queries.txt where every line is a different query for searching.
 
 
 If everything occours fine, you can run the program by executing:
 ```
-./parser
+./queryfinder
 ```
 
 ## Outputs
 Will be printed:
 
-Collection Number of Pages
-Size of the vocabulary (number of distinct terms)
-Total Terms Count
-Average time for parsing each page
-Total parsing time
-Average size of each inverted list
-Average number of documents for each term
-Defined number of lines (from inverted file) to be sorted each time (must fit on RAM)
-Total time for sorting the inverted file
-Total time
+Total number of queries
+Average response time per query 
+Total searching time
 
-Besides these prints, four files will be saved:
-"tempfile.txt" - the temporary inv file taken from collection. It is not sorted yet
-"vocabulary.txt" - file representing each term and its id, for inspection
-"invfile.txt" - the sorted inverted file. Each line represents an occurrence of a term, in a document in a specific position
-"dictionary.txt" - the dictionary generated. Each line represents a term, its range of occurrence on inv file and its IDF
+Besides these prints, one file will be saved:
+"queriesresult.txt" - the file that includes each query searched, number of possible results for each and top 5 results (document links more relevants based on Vector Model)
+
 
 
 Anything you can refer an email to: gabpaivapereira@gmail.com

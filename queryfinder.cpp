@@ -31,7 +31,7 @@ std::fstream& GotoLine2(std::fstream& file, unsigned int place){
 
 bool QueryFinder::readDict(){
 
-  cout << "Reading dictionary" << "\n";
+  cout << "Loading dictionary" << "\n";
   string dictItem;
   std::vector<std::string> ve;
   try{
@@ -247,7 +247,7 @@ bool QueryFinder::writeDocPosi(){
 }
 
 bool QueryFinder::readDocNames(){
-  cout << "Reading doc links" << "\n";
+  cout << "Loading doc urls" << "\n";
   ifstream file(INVERTED_PATH + DOCLINKS_NAME,ios::binary);
   string line,url;
   std::vector<std::string> ve;
@@ -275,7 +275,7 @@ bool QueryFinder::readDocNames(){
 }
 
 bool QueryFinder::readDocWij(){
-  cout << "Reading doc wij" << "\n";
+  cout << "Loading doc wij" << "\n";
   ifstream file(INVERTED_PATH + DOCWIJ_NAME,ios::binary);
   string line;
   float wij;
@@ -304,7 +304,7 @@ bool QueryFinder::readDocWij(){
 }
 
 bool QueryFinder::readDocPosi(){
-  cout << "Reading doc term posi" << "\n";
+  cout << "Loading doc term position" << "\n";
   ifstream file(INVERTED_PATH + TERM_POSITION_NAME,ios::binary);
   string line;
   std::vector<std::string> ve;
@@ -412,7 +412,7 @@ bool QueryFinder::readInvFile(map<int,int> id_terms_qtd, string query){
   doc_rank.clear();
 
   sort(vecSort.rbegin(),vecSort.rend());
-  string msg = "";
+  string msg = "number of results: "+to_string(vecSort.size())+"\n";
   //for (std::map<int, float>::iterator i = doc_rank.begin(); i != doc_rank.end(); i++){
   for(int i = 0; i < vecSort.size(); i++){
     if(i >=5){
@@ -429,7 +429,7 @@ bool QueryFinder::readInvFile(map<int,int> id_terms_qtd, string query){
 }
 
 bool QueryFinder::readVocab(){
-  cout << "Reading Vocabulary" << "\n";
+  cout << "Loading vocabulary" << "\n";
   ifstream file(INVERTED_PATH + VOCAB_NAME,ios::binary);
   string line;
   int num;
@@ -473,6 +473,7 @@ bool QueryFinder::preStart(){
 
 
 bool QueryFinder::startSearch(){
+
   cout << "Starting search for queries on "+QUERIES_NAME+"\n";
   double t0 = elapsed();
   int numQueries = 0; 
@@ -496,6 +497,10 @@ bool QueryFinder::startSearch(){
       
       cout << "query: "<< query << endl;
       for(int q = 0; q < terms.size();q++){
+        if (std::find(std::begin(words2avoid), std::end(words2avoid), terms[q]) != std::end(words2avoid)){
+          //term is a forbidden word (article)
+          continue;
+        }
 
         if(term_qtd.find(terms[q])!= term_qtd.end()){
           //cout << "The position of " << t <<" is " << vocabMap[t] <<"\n";
@@ -521,8 +526,10 @@ bool QueryFinder::startSearch(){
   }
 
   double t1 = elapsed();
+  double tim = t1-t0;
   std::cout << "\nTotal number of queries: "<< numQueries << endl;
-  std::cout << "Total searching time : "<< t1-t0 << "s" << endl << endl;
+  std::cout << "Average response time per query : "<< tim/numQueries << "s" << endl << endl;
+  std::cout << "Total searching time : "<< tim << "s" << endl << endl;
 
   return true;
 
@@ -558,10 +565,6 @@ int main(int argc, char **argv){
     p.preStart();
     
     p.startSearch();
-
-
-    
-
 
 
     return 0;
