@@ -355,6 +355,7 @@ bool QueryFinder::readInvFile(map<int,int> id_terms_qtd, string query){
     GotoLine2(file,termPosi[id->first]);
     //GotoLine(file, id->first);
     getline(file,line);
+    
     strtk::parse(line," ",ve);
     //cout << line << "\n";
     line = "";
@@ -400,9 +401,15 @@ bool QueryFinder::readInvFile(map<int,int> id_terms_qtd, string query){
   // already have the top part
   vector<pair<float,int>> vecSort;
   for(auto d = doc_rank.begin(); d != doc_rank.end(); d++){
-    doc_rank[d->first] /= docWij[d->first];
+    if(docWij[d->first] != 0){
+      doc_rank[d->first] /= docWij[d->first];
+    }else{
+      doc_rank[d->first] = 0;
+    }
     vecSort.push_back(make_pair(doc_rank[d->first],d->first));
   }
+
+  doc_rank.clear();
 
   sort(vecSort.rbegin(),vecSort.rend());
   string msg = "";
@@ -417,6 +424,7 @@ bool QueryFinder::readInvFile(map<int,int> id_terms_qtd, string query){
 
   cout << msg;
   
+  file.close();
   saveQuery(query, msg);
 }
 
@@ -499,6 +507,7 @@ bool QueryFinder::startSearch(){
         //cout << terms[q] <<endl;
       }
 
+      terms.clear();
       processQuery(term_qtd, query);
 
       numQueries++;

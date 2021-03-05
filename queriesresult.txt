@@ -1,11 +1,77 @@
 query: eduardo bolsonaro
-page name: https://andrebona.com.br/tag/deputado-eduardo-bolsonaro/
+page URL: https://andrebona.com.br/tag/deputado-eduardo-bolsonaro/
 rank: 1.372766
-page name: https://andrebona.com.br/tag/eduardo-bolsonaro-em-washington/
+page URL: https://andrebona.com.br/tag/eduardo-bolsonaro-em-washington/
 rank: 1.358972
-page name: https://andrebona.com.br/tag/eduardo-bolsonaro-embaixador/
+page URL: https://andrebona.com.br/tag/eduardo-bolsonaro-embaixador/
 rank: 1.352106
-page name: https://andrebona.com.br/tag/embaixador-nos-eua/
+page URL: https://andrebona.com.br/tag/embaixador-nos-eua/
 rank: 1.248561
-page name: https://andrebona.com.br/tag/itamaraty/
+page URL: https://andrebona.com.br/tag/itamaraty/
 rank: 1.235288
+query: corona vírus
+page URL: https://advocaciajacobi.com.br/tag/corona-virus/
+rank: 2.133896
+page URL: https://advmanoelneto.jusbrasil.com.br/edicoes
+rank: 1.999035
+page URL: https://advocaciajacobi.com.br/tag/crise-mundial/
+rank: 1.762422
+page URL: https://advocaciajacobi.com.br/saiba-como-o-corona-virus-podera-influenciar-no-teste-do-bafometro/
+rank: 1.709660
+page URL: http://artigoscheckpoint.thomsonreuters.com.br/index.php?home=home_artigos&m=_&autor_x=1100
+rank: 1.620241
+query: eleição 2020
+page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/sp/sao-paulo/
+rank: 1.153809
+page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/rj/rio-de-janeiro/
+rank: 1.086005
+page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/ce/fortaleza/
+rank: 1.053045
+page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/am/manaus/
+rank: 1.020704
+page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/pa/belem/
+rank: 1.020154
+query: álcool gel
+page URL: https://assistenciatecnica.uol.com.br/includes/sidebar-consultoria.inc
+rank: 39.574421
+page URL: https://covid.saude.gov.br/
+rank: 36.058090
+page URL: https://conta.uol.com.br/login?t=default&env=visitante&dest=https://batepapo.uol.com.br
+rank: 30.844152
+page URL: https://noticias.uol.com.br/eleicoes/2020/apuracao/2turno/sp/sao-paulo/
+rank: 30.072334
+page URL: https://bi.saude.ba.gov.br/transparencia/
+rank: 28.560717
+query: celular novo
+page URL: https://andrebona.com.br/tag/aplicativos-para-limpar-a-memoria-do-celular/
+rank: 0.691086
+page URL: https://andrebona.com.br/tag/melhor-app-para-limpar-celular-2019/
+rank: 0.690461
+page URL: https://andrebona.com.br/tag/baixar-aplicativo-para-limpar-memoria-do-celular/
+rank: 0.679817
+page URL: https://andrebona.com.br/tag/aplicativo-para-limpar-celular-iphone/
+rank: 0.678156
+page URL: https://andrebona.com.br/tag/controlar-conta-do-celular/
+rank: 0.628078
+query: carro usado
+page URL: https://covid.saude.gov.br/
+rank: 44.636425
+page URL: https://apfit.org.br/
+rank: 34.912704
+page URL: http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4489197A1=
+rank: 26.585827
+page URL: http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4451294H2=
+rank: 26.495396
+page URL: http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4760893E1
+rank: 26.309147
+query: dinheiro extra
+page URL: https://acervomais.com.br/index.php/artigos/article/view/2236/1013
+rank: 3.116419
+page URL: https://acervomais.com.br/index.php/artigos/article/view/2236/1012
+rank: 3.116419
+page URL: https://acervomais.com.br/index.php/saude/article/view/4915/3090
+rank: 2.786622
+page URL: https://acervomais.com.br/index.php/saude/article/view/4484/2547
+rank: 2.708231
+page URL: https://acervomais.com.br/index.php/artigos/article/view/1670/804
+rank: 2.703862
