@@ -24,7 +24,7 @@ std::fstream& GotoLine(std::fstream& file, unsigned int num){
     return file;
 }
 
-std::fstream& GotoLine2(std::fstream& file, int place){
+std::fstream& GotoLine2(std::fstream& file, unsigned int place){
     file.seekg(place);
     return file;
 }
@@ -334,7 +334,7 @@ bool QueryFinder::readDocPosi(){
 
 
 bool QueryFinder::readInvFile(map<int,int> id_terms_qtd, string query){
-  cout << "Reading lines on inv file" << "\n";
+  //cout << "Reading lines on inv file" << "\n";
   fstream file(INVERTED_PATH + INVERTED_NAME,ios::in );
   string line,url;
   std::vector<std::string> ve;
@@ -351,11 +351,12 @@ bool QueryFinder::readInvFile(map<int,int> id_terms_qtd, string query){
   
   for(auto id = id_terms_qtd.begin(); id != id_terms_qtd.end(); id++){
   //for(auto id: id_terms_qtd){
-    cout << id->first << "\n";
+    //cout << termPosi[498]<< "\n";
     GotoLine2(file,termPosi[id->first]);
+    //GotoLine(file, id->first);
     getline(file,line);
     strtk::parse(line," ",ve);
-    cout << line << "\n";
+    //cout << line << "\n";
     line = "";
     for(int i = 1; i < ve.size(); i+= 2){
       doc = atoi(ve[i].c_str());
@@ -410,7 +411,7 @@ bool QueryFinder::readInvFile(map<int,int> id_terms_qtd, string query){
     if(i >=5){
       break;
     }
-    msg += "page name: "+docNames[vecSort[i].second]+"\nrank: "+to_string(vecSort[i].first)+"\n";
+    msg += "page URL: "+docNames[vecSort[i].second]+"\nrank: "+to_string(vecSort[i].first)+"\n";
   }
     
 
@@ -511,7 +512,7 @@ bool QueryFinder::startSearch(){
   }
 
   double t1 = elapsed();
-  std::cout << "Total number of queries: "<< numQueries << endl;
+  std::cout << "\nTotal number of queries: "<< numQueries << endl;
   std::cout << "Total searching time : "<< t1-t0 << "s" << endl << endl;
 
   return true;

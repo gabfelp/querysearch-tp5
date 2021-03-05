@@ -1,16 +1,11 @@
-query: jair bolsonaro
-page name: https://app.assertivasolucoes.com.br/
-rank: inf
-page name: http://basecoc.coc.fiocruz.br
-rank: inf
-page name: http://buscatextual.cnpq.br/buscatextual/visualizacv.jsp?id=K4783159E5
-rank: inf
-page name: http://buscatextual.cnpq.br/buscatextual/visualizacv.jsp?id=K4783483Z7
-rank: inf
-page name: http://buscatextual.cnpq.br/buscatextual/visualizacv.jsp?id=K4763314U7
-rank: inf
 query: eduardo bolsonaro
-query: eduardo bolsonaro
-query: eduardo bolsonaro
-query: eduardo bolsonaro
-query: eduardo bolsonaro
+page name: https://andrebona.com.br/tag/deputado-eduardo-bolsonaro/
+rank: 1.372766
+page name: https://andrebona.com.br/tag/eduardo-bolsonaro-em-washington/
+rank: 1.358972
+page name: https://andrebona.com.br/tag/eduardo-bolsonaro-embaixador/
+rank: 1.352106
+page name: https://andrebona.com.br/tag/embaixador-nos-eua/
+rank: 1.248561
+page name: https://andrebona.com.br/tag/itamaraty/
+rank: 1.235288
